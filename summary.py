@@ -1,7 +1,11 @@
 import speech_recognition as sr
 import moviepy.editor as mp
+import os
 
-clip = mp.VideoFileClip(r"sample2.MOV")
+here = os.path.dirname(os.path.abspath(__file__))
+filename = os.path.join(here, 'sample.mp4')
+
+clip = mp.VideoFileClip(filename)
 
 clip.audio.write_audiofile(r"converted.wav")
 
